@@ -1,0 +1,159 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Software Requirements Specification (SRS) for Company Management Web Application (Efficiency Edge)}
+\newcommand{\courseinfo}{
+    \textbf{Course Code: CSE327} \\ 
+    \textbf{Course Title: Software Engineering}
+}
+\author{
+    S.M. Riaz Rahman Antu \\ 2121462642 \\[1ex]
+    \and
+    Sakib Jawad \\ 2031411642 \\[1ex]
+    \and
+    Souvik Pramanik \\ 2112471642
+}
+\date{2 . December . 2024}
+
+\begin{document}
+
+\maketitle
+\begin{center}
+    \courseinfo
+\end{center}
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\subsection{Purpose}
+This document outlines the software requirements for a Company Management Website. The platform is designed to streamline company operations by managing projects, tasks, and employee performance, with distinct roles for the CEO (admin), managers, and employees. The system aims to facilitate project assignments, daily reporting, and provide data-driven insights to enhance decision-making and management.
+
+\subsection{Intended Audience}
+The intended audience for this document includes:
+\begin{itemize}
+    \item Developers tasked with building the system.
+    \item Quality Assurance (QA) professionals responsible for testing.
+    \item Project Managers overseeing the website’s development.
+    \item Business stakeholders and leadership teams who will track the project's progress.
+    \item End-users (Admin, Manager, Employee) who will interact with the system.
+\end{itemize}
+
+\subsection{Intended Use}
+This Software Requirements Specification (SRS) provides a comprehensive guideline for the development team to understand the project scope and functional needs. Developers can use it to identify areas requiring further focus or improvement and can test the website for any errors. The document serves as a reference for Admins, Managers, and Employees, guiding them in their respective roles and ensuring that the system aligns with their responsibilities.
+
+\subsection{Product Scope}
+The software will enable:
+\begin{itemize}
+    \item Assigning tasks and managing projects efficiently.
+    \item Submission of daily reports by managers and employees.
+    \item Role-specific user profiles with access privileges.
+    \item Performance statistics for both employees and managers.
+    \item Integration with external tools such as email notifications for task assignments and updates.
+    \item Admin oversight on task progress and team performance.
+    \item Data-driven insights and analytics to improve decision-making.
+\end{itemize}
+The goal is to create an efficient system that enhances task management and communication across the company, ensuring smooth operation of daily workflows.
+
+\subsection{Risk Definition}
+Potential risks associated with the system include:
+\begin{itemize}
+    \item \textbf{Data Protection:} Preventing unauthorized access to sensitive project and employee data. Implementing strong encryption and secure login methods is critical.
+    \item \textbf{System Efficiency:} Ensuring smooth performance with multiple users working simultaneously without slowdowns. Load balancing and scalability will be integral.
+    \item \textbf{Technical Risks:} Delays in implementing complex features may increase costs. Ongoing assessments and collaboration will mitigate this.
+    \item \textbf{Scope Creep:} Additional feature requests could delay the project and increase costs. A clear project scope and change control procedures will help manage this risk.
+    \item \textbf{Resource Constraints:} Limited expertise with some technologies may result in delays. Training and hiring additional resources will address these challenges.
+    \item \textbf{Integration Risks:} Integration with third-party systems and tools may pose challenges, requiring thorough testing and validation.
+\end{itemize}
+
+\newpage
+
+\section{Overall Description}
+
+\subsection{User Classes and Characteristics}
+The system will accommodate three distinct user classes:
+\begin{itemize}
+    \item \textbf{Admin (CEO):} Full control over all aspects of the platform, including task assignments, project management, and user evaluations. Admin can also generate reports on overall system performance.
+    \item \textbf{Manager:} Responsible for managing tasks assigned by the Admin and overseeing employee performance. Managers can track task progress, provide feedback, and communicate directly with employees.
+    \item \textbf{Employee:} Executes tasks assigned by Managers and reports progress. Employees can track their task status, communicate with Managers, and submit daily updates.
+\end{itemize}
+
+\subsection{User Needs}
+\begin{itemize}
+    \item \textbf{Admin:} Needs a comprehensive dashboard to manage tasks, track progress, generate reports, and evaluate employee performance. Requires the ability to create, edit, or delete user accounts.
+    \item \textbf{Manager:} Needs a tool to assign tasks to employees, track their progress, monitor performance statistics, and provide feedback to Admin and Employees.
+    \item \textbf{Employee:} Needs a simple interface to view tasks, track progress, and report completed work. Also requires a method for submitting daily reports and receiving feedback from Managers.
+\end{itemize}
+
+\subsection{Operating Environment}
+The platform will be accessible through modern web browsers such as Chrome, Firefox, and Edge. It will be compatible with both desktop and mobile devices to ensure broad accessibility. The front-end will be developed using HTML, CSS, and JavaScript, while the back-end will utilize PHP or Django, with MySQL for database management. The system will be hosted on a cloud platform to ensure scalability and availability.
+
+\subsection{Constraints}
+\begin{itemize}
+    \item \textbf{Time Constraints:} The project must be completed within a specific timeline, with deliverables for each phase of the development cycle.
+    \item \textbf{Technology Constraints:} The website will be built with modern web technologies, and any technological limitations or integration challenges should be considered. The use of external libraries and tools should be planned for compatibility.
+    \item \textbf{Regulatory Constraints:} The system must comply with data privacy and protection regulations, such as GDPR or other relevant laws, depending on the geographic location of users.
+\end{itemize}
+
+\subsection{Assumptions}
+\begin{itemize}
+    \item The system will be used by English-speaking users, but future versions may support additional languages.
+    \item Users will have access to the internet and basic computer skills.
+    \item Admins will evaluate employee and manager performance based on task completion, reports, and feedback.
+    \item The website will be accessible 24/7, with planned downtime for maintenance or updates.
+\end{itemize}
+
+\newpage
+
+\section{Requirements}
+
+\subsection{Functional Requirements}
+The system will provide the following functionalities:
+\begin{itemize}
+    \item \textbf{Login:} Admin, Manager, and Employee will log in using their assigned credentials. The system will include measures to prevent unauthorized access and track failed login attempts.
+    \item \textbf{Admin Panel:} Admin will manage user accounts, assign tasks, oversee projects, and evaluate performance.
+    \item \textbf{Manager Panel:} Managers will assign tasks to employees, track their progress, and provide feedback. Managers can also generate reports on task completion and employee performance.
+    \item \textbf{Employee Panel:} Employees will view assigned tasks, track progress, report completed work, and submit daily updates.
+    \item \textbf{Notifications:} Employees and Managers will receive notifications about task assignments, deadlines, and updates via email or system alerts.
+\end{itemize}
+\subsection{Non-Functional Requirements}
+
+\subsubsection{Performance}
+The system should be able to handle up to 1,000 concurrent users, with a response time of less than one second. Task completion and reporting features must be efficient to maintain system performance, even during peak load periods.
+
+\subsubsection{Safety}
+The safety of user data is paramount. Personal and sensitive information, such as login credentials and task details, must be securely stored and accessible only to authorized users. The system will implement SSL/TLS encryption for secure communication.
+
+\subsubsection{Security}
+The system will implement role-based access control, ensuring that only authorized users can access specific features. Regular security audits, data encryption, and compliance with security best practices will be followed to safeguard user information.
+
+\subsubsection{Quality}
+The platform will maintain high-quality standards through a robust back-end architecture, a user-friendly interface, and consistent performance. Quality will be ensured by regular testing (unit, integration, system testing) and user feedback. The system will follow industry-standard coding practices and be documented for maintainability.
+
+\section{Additional Functionalities}
+\begin{itemize}
+    \item \textbf{Task Progress Tracking:} Both Admin and Manager can track progress on assigned tasks. Employees can update their task status, which is monitored by Admin and Manager.
+    \item \textbf{Reporting:} Employees and Managers can submit daily or weekly reports on task completion. Admin can review these reports to assess employee performance.
+    \item \textbf{Personal Information Management:} Each user can update and view their personal information from their respective panels. This includes contact details, profile picture, and role-related preferences.
+    \item \textbf{File Sharing:} The system will allow users to upload and share relevant files related to tasks, projects, and reports.
+\end{itemize}
+
+\newpage
+
+\section{Glossary}
+\begin{description}
+    \item[Admin (CEO)] The user role with full control over the platform, responsible for task assignments, project management, and performance evaluations.
+    \item[Manager] The user responsible for managing assigned tasks, overseeing employee progress, and providing feedback to Admin and Employees.
+    \item[Employee] The user who completes assigned tasks, reports progress, and provides updates to Managers.
+    \item[Performance Statistics] Data reflecting the progress and effectiveness of employees and managers in completing assigned tasks.
+    \item[Assigned Tasks] Tasks allocated by Admin or Manager to employees, tracked and updated through the system.
+    \item[Task Progress] The current status of a task (e.g., not started, in progress, completed) as updated by employees.
+    \item[File Sharing] The feature allowing users to upload and share files related to tasks, projects, or reports.
+\end{description}
+
+\end{document}
